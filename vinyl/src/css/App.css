@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&family=Inter:wght@400;600&display=swap');
+
+.app-container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;  /* Anchor left */
+  overflow: hidden;  /* Hide songs when off-screen */
+}
+
+/*Set initial state for scene-container*/
+.scene-container {
+    width: 100vw;
+    height: 100vh;
+}
+
+.songs-container {
+    width: 50vw;
+    height: 100vh;
+    padding: 40px;
+}
+
+.songs-container h1 {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+    width: fit-content;
+    margin: 0 auto;
+    /*text-align:*/
+    color: whitesmoke;
+    margin-top: 120px;
+    margin-bottom: 20px;
+    opacity: 0;
+}
+
+.songs-container ul {
+    margin: 0 auto;
+    width: 100%;
+}
+
+.music-player {
+    opacity: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+}
+
+.music-player svg {
+    width: 60px;
+    height: 60px;
+    padding: 10px;
+    cursor: pointer;
+}

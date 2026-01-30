@@ -1,0 +1,15 @@
+.song-item {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    color: whitesmoke;
+    opacity: 0;
+}
+
+.song-item:hover {
+    color: lightblue;
+    transition: 0.5s;
+    cursor: pointer;
+}
