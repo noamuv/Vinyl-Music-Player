@@ -3,7 +3,7 @@ import { Suspense, useRef, useState } from 'react'
 import { Canvas, useFrame } from '@react-three/fiber'
 import { OrbitControls, useGLTF } from '@react-three/drei'
 
-function VinylPlayer({isHovered, isPlaying, onPointerEnter, onPointerLeave, onClick}) {
+function VinylPlayer({isHovered, isSongPlaying, isPlaying, onPointerEnter, onPointerLeave, onClick}) {
   const { nodes, materials } = useGLTF('/vinyl_final-processed.glb');
   const vinylRef = useRef();
   const sleeveRef = useRef();
@@ -61,7 +61,7 @@ function VinylPlayer({isHovered, isPlaying, onPointerEnter, onPointerLeave, onCl
 
     //3. Hover State
     if (isHovered && !isPlaying && !isClosing) {
-        //Hover: slide out + rotate foward
+      //Hover: slide out + rotate foward
       hoverTimeRef.current += delta;  // Increment
       recordRef.current.position.x += (targetPosition - recordRef.current.position.x) * 0.05
       //Record rotation animation
@@ -72,9 +72,12 @@ function VinylPlayer({isHovered, isPlaying, onPointerEnter, onPointerLeave, onCl
     else {
       //Not hovering and not playing: slide back + rotate backward
       hoverTimeRef.current = 0;  // Reset
-      recordRef.current.position.x += (targetPosition - recordRef.current.position.x) * 0.05
+      recordRef.current.position.x += (targetPosition - recordRef.current.position.x) * 0.02
       //Record rotation animation
-      recordRef.current.rotation.z += (targetPosition - recordRef.current.position.x) - 0.0075;
+      recordRef.current.rotation.z += (targetPosition - recordRef.current.position.x) - 0;
+      if(isSongPlaying) {
+        recordRef.current.rotation.z -= delta 
+      }
     }
 
 
@@ -105,7 +108,7 @@ function VinylPlayer({isHovered, isPlaying, onPointerEnter, onPointerLeave, onCl
 
 useGLTF.preload('/vinyl_final-processed.glb')
 
-export default function Scene({isHovered, isPlaying, onPointerEnter, onPointerLeave, onClick}) {
+export default function Scene({isHovered, isSongPlaying, isPlaying, onPointerEnter, onPointerLeave, onClick}) {
     return(
         <Canvas 
           camera={{fov: 10, near: 0.1, far: 2000, position: [0, 0, 4]}}
@@ -115,7 +118,13 @@ export default function Scene({isHovered, isPlaying, onPointerEnter, onPointerLe
             <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} decay={0} intensity={Math.PI} />
             <pointLight position={[-10, -10, -10]} decay={0} intensity={Math.PI} />
             <Suspense>
-                <VinylPlayer isHovered={isHovered} isPlaying={isPlaying} onPointerEnter={onPointerEnter} onPointerLeave={onPointerLeave} onClick={onClick}/>
+                <VinylPlayer 
+                  isHovered={isHovered} 
+                  isPlaying={isPlaying} 
+                  isSongPlaying={isSongPlaying}
+                  onPointerEnter={onPointerEnter} 
+                  onPointerLeave={onPointerLeave} 
+                  onClick={onClick}/>
             </Suspense>
             {/* <OrbitControls /> */}
         </Canvas>

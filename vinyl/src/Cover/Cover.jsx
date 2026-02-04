@@ -1,4 +1,4 @@
-import './css/Cover.css'
+import './Cover.css'
 import { Canvas } from "@react-three/fiber";
 
 export default function Cover() {

@@ -2,12 +2,10 @@ import './css/Songs.css'
 
 export default function Songs(props) {
     return(
-        <li className='song-item' onClick={props.onClick}>
-            {/* <span>{props.number}</span>
-            <img>{props.img}</img> */}
-            <span>{props.name}</span>
-            <span>{props.artist}</span>
-            {/* <span>{props.duration}</span> */}
-        </li>
+        <div className='song-item' onClick={props.onClick}>
+            <img id="song-img" src={props.image}/>
+            <h2 id="song-name">{props.name}</h2>
+            <span id="song-artist">{props.artist}</span>
+        </div>
     )
 }
