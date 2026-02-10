@@ -98,10 +98,10 @@ function App() {
             { 
               opacity: 0, 
               y: -20, 
-              duration: 0.3, 
+              duration: 0.2, 
             }
         )
-        tl.to(['#song-artist', '#song-name', '#song-img'],
+        tl.to(['.song-info', '#song-img'],
             { 
               opacity: 0, 
               y: -20, 
@@ -150,11 +150,11 @@ function App() {
         { 
           opacity : 1, 
           x: '0%', 
-          duration: 1, 
+          duration: 0.1, 
           ease: 'power2.out',
           onComplete: () => {
           // NOW animate the text (elements exist now)
-          gsap.to(['#song-img', '#song-name', '#song-artist'],
+          gsap.to(['#song-img', '.song-info'],
             { 
               opacity: 1, 
               y: 0, 
@@ -170,7 +170,7 @@ function App() {
                 opacity: 1, 
                 y: 0, 
                 duration: 0.6, 
-                delay: 1
+                delay: 0.6
               }
           )
         }
