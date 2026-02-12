@@ -18,6 +18,7 @@ function App() {
   //Songs list
   const songs = [
         {name : "Dafvnk", artist: "VIL", file: "/audio/01 - Dafvnk.mp3", image: "/cover-art/Screenshot 2026-02-04 at 16.03.17.png"},
+        {name: "Girl FX", artist: "Mabel", file: "/audio/Mabel - Girl FX (Original).mp3", image: "/cover-art/Screenshot 2026-02-12 at 20.08.01.png"},
         {name : "Wolf Bat", artist: "Mabel", file: "/audio/05 Wolf Bat.mp3", image: "/cover-art/Screenshot 2026-02-04 at 16.03.29.png"},
         {name : "Zirzamin (Persian Delight)", artist: "SinaXX", file: "/audio/Sina XX - Zirzamin (Persian Delight).mp3", image: "/cover-art/Screenshot 2026-02-04 at 16.03.37.png"}
     ]
