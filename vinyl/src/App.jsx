@@ -181,7 +181,7 @@ function App() {
   }
 
   return (
-    <div className='app-container' >
+    <div className='app-container'>
       <div className='scene-container'>
         <Scene 
           isHovered={isHovered} 
