@@ -182,9 +182,6 @@ function App() {
 
   return (
     <div className='app-container'>
-      <div className='app-name'>
-        <h1>Vinyl Player</h1>
-      </div>
       <div className='scene-container'>
         <Scene 
           isHovered={isHovered} 
