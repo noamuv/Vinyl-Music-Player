@@ -7,13 +7,25 @@
   background-size: contain;
   background-position: center;
   background-attachment: fixed;  /*Stays in place when scrolling*/
-  /* background-repeat: no-repeat; */
+  background-repeat: no-repeat;
   width: 100vw;
   height: 100vh;
   display: flex;
   align-items: center;
   justify-content: flex-start;  /* Anchor left */
   overflow: hidden;  /* Hide songs when off-screen */
+}
+
+.app-name {
+    position: absolute;
+    width: fit-content;
+    margin-inline: auto;
+    font-size: 2.5rem;
+    left: 0; 
+    right: 0; 
+    top: 0;
+    color: white;
+    margin-top: 70px;
 }
 
 /*Set initial state for scene-container*/
