@@ -1,13 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&family=Inter:wght@400;600&display=swap');
 
 .app-container {
-  background-image: 
+  /* background-image: 
   linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
   url('/cover-art/NoiseDifferenceCollageBackground.png');
   background-size: contain;
-  background-position: center;
-  background-attachment: fixed;  /*Stays in place when scrolling*/
-  background-repeat: no-repeat;
+  background-position: center; 
+  background-attachment: fixed; 
+  background-repeat: no-repeat; */
+  background-color: rgba(0, 0, 0, 0.82);
   width: 100vw;
   height: 100vh;
   display: flex;
@@ -16,7 +17,7 @@
   overflow: hidden;  /* Hide songs when off-screen */
 }
 
-.app-name {
+/* .app-name {
     position: absolute;
     width: fit-content;
     margin-inline: auto;
@@ -26,7 +27,7 @@
     top: 0;
     color: white;
     margin-top: 70px;
-}
+} */
 
 /*Set initial state for scene-container*/
 .scene-container {
