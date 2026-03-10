@@ -95,12 +95,21 @@ function App() {
     if(isPlaying) {
       const tl = gsap.timeline()
       //Fade-out song stuff
+      tl.to(".vertical-line",
+        { 
+          height: 0, 
+          opacity: 0,
+          duration: 0.8,
+        }
+      )
+    
       tl.to('.music-player',
             { 
               opacity: 0, 
               y: -20, 
               duration: 0.2, 
-            }
+            },
+            '<'
         )
         tl.to(['.song-info', '#song-img'],
             { 
@@ -115,7 +124,7 @@ function App() {
               audioRef.current.currentTime = 0 
               setIsSongPlaying(false)
         }
-            })
+            }, '<')
           //Animate back to centered
           tl.to('.songs-container', {
                   x: '100%',           // Slide back off-screen right
@@ -177,11 +186,22 @@ function App() {
         }
        } //End state
       )
+
+      tl.fromTo(".vertical-line",
+        {height: 0, opacity: 0},
+        {
+          height: '80vh',
+          opacity: 1,
+          duration: 1,
+          ease: 'power2.out'
+        }
+      ) 
     }
   }
 
   return (
     <div className='app-container'>
+      <div className='vertical-line'></div>
       <div className='scene-container'>
         <Scene 
           isHovered={isHovered} 
