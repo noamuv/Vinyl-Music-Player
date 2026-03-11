@@ -24,7 +24,7 @@
     transform: translate(-50%, -50%);
     width: 1px;
     height: 0;
-    background: white;
+    background: rgba(255, 255, 255, 0.3);
     opacity: 0;
 }
 
